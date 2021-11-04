@@ -28,3 +28,27 @@ my_data <- ToothGrowth
 ### Essa etapa é importante para avaliar se as variáveis são categóricas (factor) ou numéricas.
 
 str(my_data)
+
+### Como a variável dose está como numérica, para comparar os níveis é necessário
+### transforma-la em variável categórica:
+
+my_data$dose <- factor(my_data$dose, 
+                  levels = c(0.5, 1, 2),
+                  labels = c("D0.5", "D1", "D2"))
+head(my_data)
+
+# Visualizando os dados --------------------------------------------------------------------------------------------------------------------
+
+library(ggpubr) # Esse pacote deve ser baixado para gerar o gráfico
+
+ggboxplot(my_data, x = "dose", y = "len", color = "supp",
+          palette = c("#00AFBB", "#E7B800")) # Cores para cada grupo de suplemento
+
+### Gráfico com barras de erro e dispersão dos dados
+# Add error bars: mean_se
+# (other values include: mean_sd, mean_ci, median_iqr, ....)
+
+ggline(my_data, x = "dose", y = "len", color = "supp",
+       add = c("mean_se", "dotplot"),
+       palette = c("#00AFBB", "#E7B800"))
+
