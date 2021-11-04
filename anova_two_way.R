@@ -13,7 +13,7 @@
 ### As observações dentro de cada nível dos grupos são normalmente distribuídas
 ### As variâncias das observações entre os grupos são iguais. 
 
-# Carregar dados ---------------------------------------------------------------------------------------------------------------------------
+# Carregando os dados ---------------------------------------------------------------------------------------------------------------------------
 
 ### Os dados usados serão do cojunto ToothGrowth construído para o dataset do R.
 ### O conjunto avalia o efeito da vitamina C sobre o crescimento dentário de porcos
@@ -71,3 +71,6 @@ summary(res.aov3)
 # e também para a interação supp*dose, concluimos que tanto a dose como o tipo de
 # vitamina e suas interações influenciam no crescimento dentário dos porcos da índia.
 
+# Referência -------------------------------------------------------------------------------------------------------------------------------
+
+### http://www.sthda.com/english/wiki/two-way-anova-test-in-r
