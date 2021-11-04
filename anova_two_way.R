@@ -52,3 +52,22 @@ ggline(my_data, x = "dose", y = "len", color = "supp",
        add = c("mean_se", "dotplot"),
        palette = c("#00AFBB", "#E7B800"))
 
+# Teste estatístico ------------------------------------------------------------------------------------------------------------------------
+
+# Para realizar o teste usamos a função aov()
+# Para verificar os resultados usamos a função summary()
+
+res.aov2 <- aov(len ~ supp + dose, data = my_data)
+summary(res.aov2)
+
+# Para saber se existe interação entre as variáveis, usamos o "*"
+
+res.aov3 <- aov(len ~ supp * dose, data = my_data)
+summary(res.aov3)
+
+# Interpretando os resultados da análise ---------------------------------------------------------------------------------------------------
+
+# Considerando o valor de p < 0.05 para os dois grupos de variáveis supp e dose
+# e também para a interação supp*dose, concluimos que tanto a dose como o tipo de
+# vitamina e suas interações influenciam no crescimento dentário dos porcos da índia.
+
